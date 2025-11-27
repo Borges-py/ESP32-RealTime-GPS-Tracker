@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PONTO A PONTO</title>
+    <meta charset='UTF-8'> 
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    
+    <link rel='stylesheet' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'/>
+    <link rel='stylesheet' href='/style.css'>
+    
+</head>
+<body>
+    <div class='container'>
+        <h1>PONTO A PONTO</h1> 
+        
+        <h2>STATUS DE CHEGADA</h2> 
+        <div class='alert-box alert-ok'>
+            <p id='alert-message'>Aguardando dados...</p>
+        </div>
+
+        <h2 class='small-margin'>MONITORAMENTO</h2> 
+        <div class='status-box' style='border-left: 5px solid #FFC107;'>
+            <p><b>Prazo Limite (UTC):</b> <span style='font-size: 1.1em; font-weight: 700;' id='alarm-time-display'>--:--</span></p>
+            <p><b>Raio de Chegada:</b> <span id="geofence-radius-display">--</span> km</p>
+        </div>
+        
+        <h2>CONTROLE DO LED</h2> 
+        <div class='switch-container'>
+            <span class='switch-label'>LED Status:</span>
+            <label class='switch'>
+                <input type='checkbox' id='ledSwitch' onchange="window.location.href = this.checked ? '/ligar' : '/desligar'">
+                <span class='slider'></span>
+            </label>
+            <span class='led-status'>DESLIGADO</span>
+        </div>
+
+        <h2>LOCALIZACAO ATUAL</h2> 
+        <div class='status-box'>
+            <p id='gps-status'><b>Status:</b> Aguardando GPS...</p>
+            <p><b>Latitude:</b> <span id='gps-lat'>0.000000</span></p>
+            <p><b>Longitude:</b> <span id='gps-lon'>0.000000</span></p>
+        </div>
+        <div id='mapid'></div>
+
+        <div id='log-container'>
+            <h2>HISTORICO DE COORDENADAS (ULTIMAS 10)</h2> 
+            <div id='log-history'>
+                </div>
+        </div>
+        
+    </div>
+    
+    <script src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'></script>
+    <script src='/script.js'></script>
+</body>
+</html>

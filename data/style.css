@@ -1,0 +1,192 @@
+/* Importacao da Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Reset e Estilos Globais */
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: #121212; 
+    color: #E0E0E0; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    min-height: 100vh; 
+}
+.container { 
+    width: 95%; 
+    max-width: 900px; 
+    margin: 20px auto; 
+    background: #1E1E1E; 
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
+}
+h1, h2 { 
+    font-weight: 700; 
+    color: #FFFFFF; 
+    border-bottom: 2px solid #333333; 
+    padding-bottom: 10px; 
+    margin-top: 20px; 
+    text-transform: uppercase; 
+}
+h2.small-margin { margin-top: 10px; }
+p { 
+    font-weight: 400; 
+    margin: 5px 0;
+}
+b { 
+    font-weight: 600; 
+    color: #FFFFFF; 
+}
+
+/* Switch (LED Control) */
+.switch-container { 
+    display: flex; 
+    align-items: center; 
+    margin: 10px 0 20px 0; 
+    padding: 15px; 
+    background-color: #282828; 
+    border-radius: 8px; 
+}
+.switch-label { 
+    margin-right: 15px; 
+    font-size: 1.1em; 
+}
+.switch { 
+    position: relative; 
+    display: inline-block; 
+    width: 60px; 
+    height: 34px; 
+}
+.switch input { 
+    opacity: 0; 
+    width: 0; 
+    height: 0; 
+}
+.slider { 
+    position: absolute; 
+    cursor: pointer; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background-color: #ccc; 
+    transition: .4s; 
+    border-radius: 34px; 
+}
+.slider:before { 
+    position: absolute; 
+    content: ''; 
+    height: 26px; 
+    width: 26px; 
+    left: 4px; 
+    bottom: 4px; 
+    background-color: white; 
+    transition: .4s; 
+    border-radius: 50%; 
+}
+input:checked + .slider { 
+    background-color: #4CAF50; 
+}
+input:focus + .slider { 
+    box-shadow: 0 0 1px #4CAF50; 
+}
+input:checked + .slider:before { 
+    transform: translateX(26px); 
+}
+.led-status { 
+    margin-left: 15px; 
+    font-weight: 600; 
+}
+
+/* Alert Box (Status de Chegada) */
+.alert-box { 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-bottom: 20px; 
+    font-weight: 700; 
+    text-align: center; 
+    font-size: 1.2em; 
+}
+.alert-ok { 
+    background-color: #1A531A; 
+    border: 2px solid #4CAF50; 
+    color: #E8F5E9; 
+} 
+.alert-warning { 
+    background-color: #5C4000; 
+    border: 2px solid #FFC107; 
+    color: #FFF8E1; 
+} 
+.alert-danger { 
+    background-color: #7B0000; 
+    border: 2px solid #F44336; 
+    color: #FFEBEE; 
+} 
+
+/* Map e Status Boxes */
+#mapid { 
+    height: 400px; 
+    width: 100%; 
+    border-radius: 8px; 
+    margin-top: 15px; 
+    border: 1px solid #333333; 
+}
+.status-box { 
+    padding: 10px; 
+    background-color: #282828; 
+    border-left: 5px solid #8AB4F8; 
+    margin-bottom: 20px; 
+    text-align: left; 
+}
+.status-box p { 
+    font-size: 1.1em; 
+}
+p[style*='color: #888'] { 
+    color: #BBBBBB !important; 
+    border-color: #444 !important; 
+}
+
+/* Log History */
+#log-container { 
+    margin-top: 30px; 
+    padding-top: 20px; 
+    border-top: 1px solid #333333; 
+    text-align: left; 
+}
+#log-history { 
+    max-height: 300px; 
+    overflow-y: auto; 
+    padding-right: 15px; 
+} 
+#log-history ul { 
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+#log-history li { 
+    margin-bottom: 8px; 
+    padding: 10px 15px; 
+    border-radius: 6px; 
+    background-color: #242424; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+    transition: background-color 0.2s; 
+    border-left: 4px solid #8AB4F8; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+#log-history li:hover { 
+    background-color: #333333; 
+}
+.log-time { 
+    font-weight: 700; 
+    color: #FFFFFF; 
+    min-width: 90px; 
+}
+.log-coords { 
+    font-family: monospace; /* Mudei para monospace para coordenadas ficarem uniformes */
+    font-size: 0.9em; 
+    color: #FFFFFF; 
+}
